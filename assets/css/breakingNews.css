@@ -1,0 +1,68 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+:root {
+  color-scheme: dark;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+} */
+
+/* start */
+
+.news-ticker {
+  display: flex;
+  gap: 1rem;
+  height: 40px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 3000;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: #EEEEEE;
+}
+.label {
+  white-space: nowrap;
+  background: #ed474a;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  position: relative;
+}
+.label::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  border: 10px solid transparent;
+  border-left-color: #ed474a;
+}
+.headlines {
+  list-style: none;
+  padding-right: 10px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.headlines li {
+  color: #000;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  line-height: 40px;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  transition: all 1s ease-in-out;
+}
+.headlines li.active {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
